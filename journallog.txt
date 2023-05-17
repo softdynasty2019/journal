@@ -1,0 +1,1756 @@
+35 packets transmitted, 28 packets received, 20% packet loss
+round-trip min/avg/max = 62.763/96.890/209.020 ms
+# journalctl -f
+Apr 18 20:05:56 vg3x-0-5-5-release ktuploadd[511]: Resetting LBB config cache
+Apr 18 20:05:56 vg3x-0-5-5-release python[11337]: Running VIN Decoder
+Apr 18 20:05:56 vg3x-0-5-5-release python[11337]: Decode VIN: 1M8GDM9AXKP042015
+Apr 18 20:05:56 vg3x-0-5-5-release python[11337]: Decoded VIN Info: MOTOR COACH INDUSTRIES, D4520, 2019
+Apr 18 20:05:56 vg3x-0-5-5-release python[11337]: Status: 5
+Apr 18 20:05:56 vg3x-0-5-5-release python[11337]: No row found for vindc_cache_refresh_days, using default of 30
+Apr 18 20:05:56 vg3x-0-5-5-release ktiftad[506]: invalid method invocation, db==0x6d960, Juris==(nil)
+Apr 18 20:05:56 vg3x-0-5-5-release systemd[1]: monitor-vin.service: Deactivated successfully.
+Apr 18 20:05:57 vg3x-0-5-5-release systemd[1]: Finished Update VIN service for bootup events.
+Apr 18 20:05:57 vg3x-0-5-5-release systemd[1]: monitor-vin.service: Consumed 2.977s CPU time.
+Apr 18 20:06:12 vg3x-0-5-5-release ktiftad[506]: invalid method invocation, db==0x6d960, Juris==(nil)
+Apr 18 20:06:17 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Process:296] Failure during process loop [10]
+Apr 18 20:06:17 vg3x-0-5-5-release ktiotd[552]: [IoTSvc_Update:557] Disconnecting MQTT Client due to connection lost
+Apr 18 20:06:18 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:06:19 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:361] Client is no longer connected
+Apr 18 20:06:19 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:06:20 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:06:20 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: ------------[ cut here ]------------
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: WARNING: CPU: 0 PID: 0 at net/sched/sch_generic.c:477 dev_watchdog+0x15d/0x258
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: NETDEV WATCHDOG: wwan0 (cdc_ncm): transmit queue 0 timed out
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Modules linked in: brcmfmac brcmutil cfg80211 cdc_mbim cdc_wdm cdc_ncm cdc_ether usbnet mii cdc_acm rfcomm cmac algif_hash algif_skcipher usb_serial_simple usbserial hci_uart btbcm bluetooth ecdh_generic ecc rfkill sha1_generic sha1_arm md5 can_raw can des_generic libdes evdev ti_am335x_adc kfifo_buf industrialio xt_MASQUERADE iptable_nat nf_nat xt_state nf_conntrack nf_defrag_ipv4 iptable_filter gpio_keys omap_aes_driver omap_sham omap_crypto pm33xx w1_gpio crypto_engine omap_rng rng_core c_can_platform c_can can_dev musb_dsps j1708_serial(O) musb_hdrc udc_core phy_am335x usbcore phy_generic usb_common wkup_m3_ipc omap_wdt phy_am335x_control ti_am335x_tscadc wkup_m3_rproc leds_gpio led_class uio_pdrv_genirq uio sch_fq_codel w1_ds2431 wire cn ledtrig_timer cryptodev(O) ip_tables x_tables [last unloaded: brcmutil]
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: CPU: 0 PID: 0 Comm: swapper Tainted: G           O      5.15.94-13-g21da280e7f18 #1
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Hardware name: Generic AM33XX (Flattened Device Tree)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c010b249>] (unwind_backtrace) from [<c0109073>] (show_stack+0xb/0xc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0109073>] (show_stack) from [<c011df5f>] (__warn+0xe3/0xe4)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c011df5f>] (__warn) from [<c061ae73>] (warn_slowpath_fmt+0x4f/0x72)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c061ae73>] (warn_slowpath_fmt) from [<c0547875>] (dev_watchdog+0x15d/0x258)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0547875>] (dev_watchdog) from [<c0164485>] (call_timer_fn+0x6d/0x108)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0164485>] (call_timer_fn) from [<c0164789>] (run_timer_softirq+0x269/0x2cc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0164789>] (run_timer_softirq) from [<c01013f9>] (__do_softirq+0x151/0x2b8)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c01013f9>] (__do_softirq) from [<c012170d>] (irq_exit+0x99/0xc8)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c012170d>] (irq_exit) from [<c0150581>] (handle_domain_irq+0x5d/0x80)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0150581>] (handle_domain_irq) from [<c0100b97>] (__irq_svc+0x57/0x98)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Exception stack(0xc0b01ef0 to 0xc0b01f38)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1ee0:                                     00000000 00000044 00000000 c0b101c0
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1f00: 00000001 c0be1d00 c1263c00 1914450a 00000001 00000044 00000000 00000044
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1f20: 7f1e912b c0b01f40 c04be1d7 c04be21c 20030033 ffffffff
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0100b97>] (__irq_svc) from [<c04be21c>] (cpuidle_enter_state+0x1c4/0x2c0)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c04be21c>] (cpuidle_enter_state) from [<c04be357>] (cpuidle_enter+0x2f/0x38)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c04be357>] (cpuidle_enter) from [<c0141931>] (do_idle+0x131/0x178)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0141931>] (do_idle) from [<c0141bb7>] (cpu_startup_entry+0xb/0xc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0141bb7>] (cpu_startup_entry) from [<c0a00e0d>] (start_kernel+0x503/0x532)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: ---[ end trace c7816946faf06c78 ]---
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: ------------[ cut here ]------------
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: WARNING: CPU: 0 PID: 0 at drivers/usb/musb/musb_host.c:113 musb_h_tx_flush_fifo+0x9d/0xdc [musb_hdrc]
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: musb-hdrc musb-hdrc.0: Could not flush host TX2 fifo: csr: 2503
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Modules linked in: brcmfmac brcmutil cfg80211 cdc_mbim cdc_wdm cdc_ncm cdc_ether usbnet mii cdc_acm rfcomm cmac algif_hash algif_skcipher usb_serial_simple usbserial hci_uart btbcm bluetooth ecdh_generic ecc rfkill sha1_generic sha1_arm md5 can_raw can des_generic libdes evdev ti_am335x_adc kfifo_buf industrialio xt_MASQUERADE iptable_nat nf_nat xt_state nf_conntrack nf_defrag_ipv4 iptable_filter gpio_keys omap_aes_driver omap_sham omap_crypto pm33xx w1_gpio crypto_engine omap_rng rng_core c_can_platform c_can can_dev musb_dsps j1708_serial(O) musb_hdrc udc_core phy_am335x usbcore phy_generic usb_common wkup_m3_ipc omap_wdt phy_am335x_control ti_am335x_tscadc wkup_m3_rproc leds_gpio led_class uio_pdrv_genirq uio sch_fq_codel w1_ds2431 wire cn ledtrig_timer cryptodev(O) ip_tables x_tables [last unloaded: brcmutil]
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: CPU: 0 PID: 0 Comm: swapper Tainted: G        W  O      5.15.94-13-g21da280e7f18 #1
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Hardware name: Generic AM33XX (Flattened Device Tree)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c010b249>] (unwind_backtrace) from [<c0109073>] (show_stack+0xb/0xc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0109073>] (show_stack) from [<c011df5f>] (__warn+0xe3/0xe4)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c011df5f>] (__warn) from [<c061ae73>] (warn_slowpath_fmt+0x4f/0x72)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c061ae73>] (warn_slowpath_fmt) from [<bf9d2701>] (musb_h_tx_flush_fifo+0x9d/0xdc [musb_hdrc])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bf9d2701>] (musb_h_tx_flush_fifo [musb_hdrc]) from [<bf9d34c3>] (musb_cleanup_urb+0x6f/0x154 [musb_hdrc])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bf9d34c3>] (musb_cleanup_urb [musb_hdrc]) from [<bf9d366b>] (musb_urb_dequeue+0xc3/0x120 [musb_hdrc])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bf9d366b>] (musb_urb_dequeue [musb_hdrc]) from [<bf97e16d>] (usb_hcd_unlink_urb+0x65/0xb8 [usbcore])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bf97e16d>] (usb_hcd_unlink_urb [usbcore]) from [<bfb3256f>] (unlink_urbs+0x5b/0xd8 [usbnet])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bfb3256f>] (unlink_urbs [usbnet]) from [<bfb33523>] (usbnet_tx_timeout+0x13/0x48 [usbnet])
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<bfb33523>] (usbnet_tx_timeout [usbnet]) from [<c054787f>] (dev_watchdog+0x167/0x258)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c054787f>] (dev_watchdog) from [<c0164485>] (call_timer_fn+0x6d/0x108)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0164485>] (call_timer_fn) from [<c0164789>] (run_timer_softirq+0x269/0x2cc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0164789>] (run_timer_softirq) from [<c01013f9>] (__do_softirq+0x151/0x2b8)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c01013f9>] (__do_softirq) from [<c012170d>] (irq_exit+0x99/0xc8)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c012170d>] (irq_exit) from [<c0150581>] (handle_domain_irq+0x5d/0x80)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0150581>] (handle_domain_irq) from [<c0100b97>] (__irq_svc+0x57/0x98)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: Exception stack(0xc0b01ef0 to 0xc0b01f38)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1ee0:                                     00000000 00000044 00000000 c0b101c0
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1f00: 00000001 c0be1d00 c1263c00 1914450a 00000001 00000044 00000000 00000044
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: 1f20: 7f1e912b c0b01f40 c04be1d7 c04be21c 20030033 ffffffff
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0100b97>] (__irq_svc) from [<c04be21c>] (cpuidle_enter_state+0x1c4/0x2c0)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c04be21c>] (cpuidle_enter_state) from [<c04be357>] (cpuidle_enter+0x2f/0x38)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c04be357>] (cpuidle_enter) from [<c0141931>] (do_idle+0x131/0x178)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0141931>] (do_idle) from [<c0141bb7>] (cpu_startup_entry+0xb/0xc)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: [<c0141bb7>] (cpu_startup_entry) from [<c0a00e0d>] (start_kernel+0x503/0x532)
+Apr 18 20:06:29 vg3x-0-5-5-release kernel: ---[ end trace c7816946faf06c79 ]---
+Apr 18 20:06:33 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:06:33 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:06:44 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:06:44 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:06:44 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 4815 ms backoff.
+Apr 18 20:07:01 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:07:09 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:07:09 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:07:09 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 8482 ms backoff.
+Apr 18 20:07:11 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:07:18 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:07:21 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:07:31 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:07:39 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:07:39 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:07:39 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 1859 ms backoff.
+Apr 18 20:07:41 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:07:42 vg3x-0-5-5-release chronyd[208]: Source 45.33.103.94 offline
+Apr 18 20:07:42 vg3x-0-5-5-release chronyd[208]: Source 23.95.169.235 offline
+Apr 18 20:07:42 vg3x-0-5-5-release lbb_connection_check.sh[16155]: 200 OK
+Apr 18 20:07:42 vg3x-0-5-5-release chronyd[208]: Source 68.233.45.146 offline
+Apr 18 20:07:42 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:07:42 vg3x-0-5-5-release chronyd[208]: Source 23.131.64.12 offline
+Apr 18 20:08:01 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:08:01 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:08:01 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 10628 ms backoff.
+Apr 18 20:08:12 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:08:19 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:08:22 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:08:32 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 33488 ms backoff.
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:371] Connection attempts exhausted in retry state, moving to disconnected state
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:08:33 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:08:45 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:08:55 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:08:56 vg3x-0-5-5-release lbb_connection_check.sh[18985]: 200 OK
+Apr 18 20:08:56 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:09:27 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:09:36 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:09:36 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:09:36 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 8717 ms backoff.
+Apr 18 20:09:47 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:09:46 vg3x-0-5-5-release ktgnssd[546]: [HandleByte:281] Buffer too small for the msg of len:7229!
+Apr 18 20:09:57 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:09:57 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:10:11 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:10:16 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:10:16 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:10:16 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 50229 ms backoff.
+Apr 18 20:10:21 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:10:22 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:10:22 vg3x-0-5-5-release lbb_connection_check.sh[21444]: 200 OK
+Apr 18 20:10:22 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:10:36 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:10:36 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 530 (ktbusd) with signal SIGABRT.
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0 Next Index: 42
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 00,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 01,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 02,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 03,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 04,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 05,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 06,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 07,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 08,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 09,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 10,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 11,98eaff8f,e5,fe,00,00,00,00,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 12,98fee500,aa,37,00,00,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 13,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 14,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 15,98feef00,ff,ff,ff,8e,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 16,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 17,98feee00,8e,ff,ff,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 18,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 19,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 20,98fef600,ff,8e,72,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 21,98fef700,ff,ff,ff,ff,ab,01,ab,01
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 22,98fefc00,ff,8e,ff,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 23,98feca00,00,ff,00,00,00,00,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 24,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 25,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 26,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 27,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 28,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 29,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 30,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 31,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 32,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 33,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 34,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:37 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 35,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 36,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:37 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 37,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 38,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 39,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 40,98eaff90,e5,fe,00,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 41,98fee500,aa,37,00,00,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 42,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 43,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 44,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 45,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 46,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 47,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 48,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN0: 49,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1 Next Index: 47
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 00,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 01,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 02,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 03,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 04,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 05,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 06,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 07,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 08,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 09,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 10,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 11,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 12,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 13,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 14,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 15,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 16,98eaff8f,e5,fe,00,00,00,00,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 17,98fee500,aa,37,00,00,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 18,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 19,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 20,98feef00,ff,ff,ff,8e,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 21,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 22,98feee00,8e,ff,ff,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 23,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 24,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 25,98fef600,ff,8e,72,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 26,98fef700,ff,ff,ff,ff,ab,01,ab,01
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 27,98fefc00,ff,8e,ff,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 28,98feca00,00,ff,00,00,00,00,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 29,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 30,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 31,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 32,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 33,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 34,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 35,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 36,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 37,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 38,98fee000,88,2c,00,00,10,59,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 39,98fef100,f0,11,8f,fd,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 40,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 41,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 42,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 43,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 44,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 45,98eaff90,e5,fe,00,07,00,00,00,00
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 46,98fee500,aa,37,00,00,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 47,8cf00400,ff,ff,ff,11,8f,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 48,98fef200,a4,0c,85,36,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: CAN1: 49,8cf00300,ff,8e,47,ff,ff,ff,ff,ff
+Apr 18 20:10:36 vg3x-0-5-5-release ktbusd[530]: SIGABRT - kill application
+Apr 18 20:10:37 vg3x-0-5-5-release ktbusd[530]: Network hardware released
+Apr 18 20:10:37 vg3x-0-5-5-release ktbusd[530]: Protocols cleared
+Apr 18 20:10:37 vg3x-0-5-5-release ktbusd[530]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:10:37 vg3x-0-5-5-release ktbusd[530]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:10:37 vg3x-0-5-5-release ktbusd[530]: ktbusd service exiting
+Apr 18 20:10:37 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:10:37 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 38.834s CPU time.
+Apr 18 20:10:40 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 1.
+Apr 18 20:10:40 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:10:40 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 38.834s CPU time.
+Apr 18 20:10:40 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:10:40 vg3x-0-5-5-release ktbusd[21767]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:10:40 vg3x-0-5-5-release ktbusd[21767]: Network hardware configured
+Apr 18 20:10:40 vg3x-0-5-5-release ktbusd[21767]: Protocols initialized
+Apr 18 20:10:40 vg3x-0-5-5-release ktbusd[21767]: Finished initialization of ktbusd
+Apr 18 20:10:40 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:10:40 vg3x-0-5-5-release ktbusd[21767]: Reading Vehicle Bus Data...
+Apr 18 20:10:50 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:10:52 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:11:02 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:11:05 vg3x-0-5-5-release ktbusd[21767]: ARB: Done waiting for mux.
+Apr 18 20:11:05 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:05 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:05 vg3x-0-5-5-release ktbusd[21767]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:11:05 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:06 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:20 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:11:20 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:11:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 21767 (ktbusd) with signal SIGABRT.
+Apr 18 20:11:20 vg3x-0-5-5-release ktbusd[21767]: SIGABRT - kill application
+Apr 18 20:11:21 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:11:21 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:21 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: Network hardware released
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: Protocols cleared
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:11:21 vg3x-0-5-5-release ktbusd[21767]: ktbusd service exiting
+Apr 18 20:11:21 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:11:21 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.477s CPU time.
+Apr 18 20:11:24 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 2.
+Apr 18 20:11:24 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:11:24 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.477s CPU time.
+Apr 18 20:11:24 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:11:24 vg3x-0-5-5-release ktbusd[23351]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:11:24 vg3x-0-5-5-release ktbusd[23351]: Network hardware configured
+Apr 18 20:11:24 vg3x-0-5-5-release ktbusd[23351]: Protocols initialized
+Apr 18 20:11:24 vg3x-0-5-5-release ktbusd[23351]: Finished initialization of ktbusd
+Apr 18 20:11:24 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:11:24 vg3x-0-5-5-release ktbusd[23351]: Reading Vehicle Bus Data...
+Apr 18 20:11:30 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:11:31 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:11:34 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:11:34 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:11:34 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 35898 ms backoff.
+Apr 18 20:11:45 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:11:45 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 23351 (ktbusd) with signal SIGABRT.
+Apr 18 20:11:45 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: SIGABRT - kill application
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: Network hardware released
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: Protocols cleared
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:11:45 vg3x-0-5-5-release ktbusd[23351]: ktbusd service exiting
+Apr 18 20:11:46 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:11:46 vg3x-0-5-5-release lbb_connection_check.sh[23874]: 200 OK
+Apr 18 20:11:46 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:11:49 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 3.
+Apr 18 20:11:49 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:11:49 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:11:49 vg3x-0-5-5-release ktbusd[23978]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:11:49 vg3x-0-5-5-release ktbusd[23978]: Network hardware configured
+Apr 18 20:11:49 vg3x-0-5-5-release ktbusd[23978]: Protocols initialized
+Apr 18 20:11:49 vg3x-0-5-5-release ktbusd[23978]: Finished initialization of ktbusd
+Apr 18 20:11:49 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:11:49 vg3x-0-5-5-release ktbusd[23978]: Reading Vehicle Bus Data...
+Apr 18 20:12:14 vg3x-0-5-5-release ktbusd[23978]: ARB: Done waiting for mux.
+Apr 18 20:12:14 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:14 vg3x-0-5-5-release ktbusd[23978]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:12:14 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:14 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:14 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:16 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:12:20 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:20 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:12:20 vg3x-0-5-5-release ktbusd[23978]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:12:20 vg3x-0-5-5-release ktbusd[23978]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:12:36 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:12:35 vg3x-0-5-5-release ktbusd[23978]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:12:35 vg3x-0-5-5-release ktbusd[23978]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:12:35 vg3x-0-5-5-release ktbusd[23978]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:12:35 vg3x-0-5-5-release ktbusd[23978]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:12:36 vg3x-0-5-5-release ktbusd[23978]: J1939 0: Requesting to claim address 90 @ 665685
+Apr 18 20:12:36 vg3x-0-5-5-release ktbusd[23978]: J1939 1: Requesting to claim address 90 @ 665686
+Apr 18 20:12:36 vg3x-0-5-5-release ktbusd[23978]: J1939 1: Requesting to claim address 95 @ 665687
+Apr 18 20:12:36 vg3x-0-5-5-release ktbusd[23978]: J1939 0: Claimed address 90
+Apr 18 20:12:36 vg3x-0-5-5-release ktbusd[23978]: J1939 1: Claimed address 95
+Apr 18 20:12:40 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:12:40 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:12:40 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 50383 ms backoff.
+Apr 18 20:12:41 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:12:45 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for TGAL
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for VIN
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for AAPP
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for TPCT
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for BPRS
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for PSAT
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for TSMG
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for ASF
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for SFLV
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for DDTC
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for EFTV
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for RHRS
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for BSEL
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for AATP
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: No source for EOTP
+Apr 18 20:12:48 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: CCAC,J190,S0,C390,F0,TC390,FTI618.656,TSL0.072,2
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: RSPD,J190,S0,C390,F5,TC390,FTI618.656,TSL0.072,143.066406
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: PBRK,J190,S0,C390,F0,TC390,FTI618.656,TSL0.072,1
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: LODO,J190,S0,C390,F5,TC390,FTI618.656,TSL0.073,2850.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ITMP,J190,S0,C78,F5,TC78,FTI618.656,TSL0.368,74.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: BATV,J190,S0,C39,F5,TC39,FTI618.656,TSL0.867,21.350000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: PFLV,J190,S0,C39,F5,TC39,FTI618.656,TSL0.867,56.800000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: CCAC,J191,S0,C390,F0,TC390,FTI618.656,TSL0.072,2
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: RSPD,J191,S0,C390,F0,TC390,FTI618.656,TSL0.072,143.066406
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: PBRK,J191,S0,C390,F0,TC390,FTI618.656,TSL0.072,1
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: LODO,J191,S0,C390,F0,TC390,FTI618.656,TSL0.073,2850.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ITMP,J191,S0,C78,F0,TC78,FTI618.656,TSL0.368,74.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: BATV,J191,S0,C39,F0,TC39,FTI618.656,TSL0.868,21.350000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: PFLV,J191,S0,C39,F0,TC39,FTI618.656,TSL0.867,56.800000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: LFRT,J190,S0,C390,F5,TC390,FTI618.659,TSL0.073,161.800000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ESPD,J190,S0,C1943,F5,TC1943,FTI618.659,TSL0.030,4578.125000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: LFRT,J191,S0,C390,F0,TC390,FTI618.661,TSL0.073,161.800000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ESPD,J191,S0,C1941,F0,TC1941,FTI629.679,TSL0.030,4578.125000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: EPCT,J190,S0,C778,F5,TC778,FTI629.699,TSL0.023,71.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: APCT,J190,S0,C778,F5,TC778,FTI629.699,TSL0.023,56.800000
+Apr 18 20:12:49 vg3x-0-5-5-release systemd-journald[99]: Data hash table of /run/log/journal/cd8ded477bf84257aefdc0cc8bce478f/system.journal has a fill level at 75.1 (1697 of 2261 items, 1302528 file size, 767 bytes per hash table item), suggesting rotation.
+Apr 18 20:12:49 vg3x-0-5-5-release systemd-journald[99]: /run/log/journal/cd8ded477bf84257aefdc0cc8bce478f/system.journal: Journal header limits reached or header out-of-date, rotating.
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: EPCT,J191,S0,C778,F0,TC778,FTI629.699,TSL0.023,71.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: APCT,J191,S0,C778,F0,TC778,FTI629.699,TSL0.023,56.800000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: OPRS,J190,S0,C77,F5,TC77,FTI629.998,TSL0.368,568.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: OPRS,J191,S0,C77,F0,TC77,FTI629.998,TSL0.368,568.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: CTMP,J190,S0,C38,F5,TC38,FTI630.498,TSL0.869,102.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: CTMP,J191,S0,C38,F0,TC38,FTI630.498,TSL0.869,102.000000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: EHRS,J190,S0,C2,F5,TC2,FTI640.560,TSL7.700,712.500000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: EHRS,J191,S0,C2,F0,TC2,FTI640.560,TSL7.700,712.500000
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: VIN,J190,S0,C18,F4,TC18,FTI665.958,TSL1.845,1M8GDM9AXKP042057
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: VIN,J191,S0,C18,F0,TC18,FTI665.958,TSL1.845,1M8GDM9AXKP042057
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:12:48 vg3x-0-5-5-release ktbusd[23978]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:12:49 vg3x-0-5-5-release ktbusd[23978]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:12:49 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:13:05 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:13:15 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:13:16 vg3x-0-5-5-release lbb_connection_check.sh[27038]: 200 OK
+Apr 18 20:13:16 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:13:31 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:13:35 vg3x-0-5-5-release ktetapd[503]: [PM_SetCanActiveSrc:728] PM CANSrc set to 2, Current Active Buses -> 0x602
+Apr 18 20:13:50 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:661] Retrying connection after 57143 ms backoff.
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:371] Connection attempts exhausted in retry state, moving to disconnected state
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:14:00 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:14:00 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:14:14 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:14:24 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:14:31 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:14:44 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:14:44 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:14:44 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 23978 (ktbusd) with signal SIGABRT.
+Apr 18 20:14:44 vg3x-0-5-5-release ktbusd[23978]: SIGABRT - kill application
+Apr 18 20:14:44 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:14:45 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:14:45 vg3x-0-5-5-release ktbusd[23978]: Network hardware released
+Apr 18 20:14:45 vg3x-0-5-5-release ktbusd[23978]: Protocols cleared
+Apr 18 20:14:45 vg3x-0-5-5-release ktbusd[23978]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:14:45 vg3x-0-5-5-release ktbusd[23978]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:14:45 vg3x-0-5-5-release ktbusd[23978]: ktbusd service exiting
+Apr 18 20:14:45 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:14:45 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 10.946s CPU time.
+Apr 18 20:14:45 vg3x-0-5-5-release lbb_connection_check.sh[29672]: 200 OK
+Apr 18 20:14:45 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:14:48 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:14:48 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 4.
+Apr 18 20:14:48 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:14:48 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 10.946s CPU time.
+Apr 18 20:14:48 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:14:48 vg3x-0-5-5-release ktbusd[29781]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:14:48 vg3x-0-5-5-release ktbusd[29781]: Network hardware configured
+Apr 18 20:14:48 vg3x-0-5-5-release ktbusd[29781]: Protocols initialized
+Apr 18 20:14:48 vg3x-0-5-5-release ktbusd[29781]: Finished initialization of ktbusd
+Apr 18 20:14:48 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:14:48 vg3x-0-5-5-release ktbusd[29781]: Reading Vehicle Bus Data...
+Apr 18 20:15:20 vg3x-0-5-5-release ktgnssd[546]: [HandleByte:281] Buffer too small for the msg of len:11543!
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: ARB: Done waiting for mux.
+Apr 18 20:15:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:15:20 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:15:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 29781 (ktbusd) with signal SIGABRT.
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: SIGABRT - kill application
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: Network hardware released
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: Protocols cleared
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:15:20 vg3x-0-5-5-release ktbusd[29781]: ktbusd service exiting
+Apr 18 20:15:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:15:20 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.060s CPU time.
+Apr 18 20:15:23 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 5.
+Apr 18 20:15:23 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:15:23 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.060s CPU time.
+Apr 18 20:15:24 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:15:24 vg3x-0-5-5-release ktbusd[30941]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:15:24 vg3x-0-5-5-release ktbusd[30941]: Network hardware configured
+Apr 18 20:15:24 vg3x-0-5-5-release ktbusd[30941]: Protocols initialized
+Apr 18 20:15:24 vg3x-0-5-5-release ktbusd[30941]: Finished initialization of ktbusd
+Apr 18 20:15:24 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:15:24 vg3x-0-5-5-release ktbusd[30941]: Reading Vehicle Bus Data...
+Apr 18 20:15:25 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:15:25 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:15:25 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:15:30 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:15:50 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:15:50 vg3x-0-5-5-release ktbusd[30941]: ARB: Done waiting for mux.
+Apr 18 20:15:50 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:50 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:50 vg3x-0-5-5-release ktbusd[30941]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:15:51 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:51 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:57 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:57 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:15:57 vg3x-0-5-5-release ktbusd[30941]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:15:57 vg3x-0-5-5-release ktbusd[30941]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:16:00 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:16:20 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:16:20 vg3x-0-5-5-release ktbusd[30941]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:16:20 vg3x-0-5-5-release ktbusd[30941]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:16:20 vg3x-0-5-5-release ktbusd[30941]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: J1939 0: Requesting to claim address 90 @ 890714
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: J1939 1: Requesting to claim address 90 @ 890716
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: J1939 1: Requesting to claim address 95 @ 890718
+Apr 18 20:16:21 vg3x-0-5-5-release lbb_connection_check.sh[32678]: 200 OK
+Apr 18 20:16:21 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: J1939 1: Claimed address 95
+Apr 18 20:16:21 vg3x-0-5-5-release ktbusd[30941]: J1939 0: Claimed address 90
+Apr 18 20:16:30 vg3x-0-5-5-release systemd[1]: Starting Cleanup of Temporary Directories...
+Apr 18 20:16:31 vg3x-0-5-5-release systemd[1]: systemd-tmpfiles-clean.service: Deactivated successfully.
+Apr 18 20:16:31 vg3x-0-5-5-release systemd[1]: Finished Cleanup of Temporary Directories.
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for TGAL
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for VIN
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for AAPP
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for TPCT
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for BPRS
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for PSAT
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for TSMG
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for ASF
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for SFLV
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for DDTC
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for EFTV
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for RHRS
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for BSEL
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for AATP
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: No source for EOTP
+Apr 18 20:16:33 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ESPD,J190,S0,C1980,F5,TC1980,FTI833.575,TSL0.016,4578.125000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ESPD,J191,S0,C1979,F0,TC1979,FTI844.640,TSL0.016,4578.125000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: EPCT,J190,S0,C793,F5,TC793,FTI844.670,TSL0.012,71.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: APCT,J190,S0,C793,F5,TC793,FTI844.670,TSL0.012,56.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: EPCT,J191,S0,C793,F0,TC793,FTI844.671,TSL0.012,71.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: APCT,J191,S0,C793,F0,TC793,FTI844.671,TSL0.012,56.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: LFRT,J190,S0,C397,F5,TC397,FTI844.721,TSL0.012,161.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: LODO,J190,S0,C397,F5,TC397,FTI844.721,TSL0.012,2850.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: CCAC,J190,S0,C397,F0,TC397,FTI844.721,TSL0.012,2
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: RSPD,J190,S0,C397,F5,TC397,FTI844.721,TSL0.012,143.066406
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: PBRK,J190,S0,C397,F0,TC397,FTI844.721,TSL0.012,1
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: LFRT,J191,S0,C397,F0,TC397,FTI844.721,TSL0.012,161.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: LODO,J191,S0,C397,F0,TC397,FTI844.721,TSL0.012,2850.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: CCAC,J191,S0,C397,F0,TC397,FTI844.721,TSL0.012,2
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: RSPD,J191,S0,C397,F0,TC397,FTI844.721,TSL0.012,143.066406
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: PBRK,J191,S0,C397,F0,TC397,FTI844.721,TSL0.012,1
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: OPRS,J190,S0,C79,F5,TC79,FTI845.119,TSL0.312,568.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: OPRS,J191,S0,C79,F0,TC79,FTI845.119,TSL0.312,568.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ITMP,J190,S0,C79,F5,TC79,FTI845.121,TSL0.312,74.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ITMP,J191,S0,C79,F0,TC79,FTI845.121,TSL0.312,74.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: CTMP,J190,S0,C38,F5,TC38,FTI845.617,TSL0.805,102.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: CTMP,J191,S0,C38,F0,TC38,FTI845.618,TSL0.805,102.000000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: BATV,J190,S0,C38,F5,TC38,FTI845.619,TSL0.805,21.350000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: PFLV,J190,S0,C38,F5,TC38,FTI845.619,TSL0.805,56.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: BATV,J191,S0,C38,F0,TC38,FTI845.619,TSL0.804,21.350000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: PFLV,J191,S0,C38,F0,TC38,FTI845.619,TSL0.804,56.800000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: EHRS,J190,S0,C4,F5,TC4,FTI850.002,TSL8.306,712.500000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: EHRS,J191,S0,C4,F0,TC4,FTI850.002,TSL8.306,712.500000
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: VIN,J190,S0,C18,F4,TC18,FTI890.995,TSL1.828,1M8GDM9AXKP042057
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: VIN,J191,S0,C18,F0,TC18,FTI890.998,TSL1.828,1M8GDM9AXKP042057
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:16:33 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:16:34 vg3x-0-5-5-release ktbusd[30941]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:16:34 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:16:51 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:16:51 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:16:51 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:16:51 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:17:01 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:17:06 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: up
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: Source 45.33.103.94 online
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: Source 23.95.169.235 online
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: Source 68.233.45.146 online
+Apr 18 20:17:07 vg3x-0-5-5-release lbb_connection_check.sh[1862]: 200 OK
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: Source 23.131.64.12 online
+Apr 18 20:17:07 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 300 seconds
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: Selected source 45.33.103.94 (1.pool.ntp.org)
+Apr 18 20:17:07 vg3x-0-5-5-release chronyd[208]: System clock wrong by 1.810600 seconds
+Apr 18 20:17:25 vg3x-0-5-5-release audit[2822]: NETFILTER_CFG table=filter family=2 entries=9 op=xt_replace pid=2822 comm="iptables"
+Apr 18 20:17:25 vg3x-0-5-5-release audit[2822]: SYSCALL arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=4e6f38 items=0 ppid=873 pid=2822 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" key=(null)
+Apr 18 20:17:25 vg3x-0-5-5-release kernel: kauditd_printk_skb: 2 callbacks suppressed
+Apr 18 20:17:25 vg3x-0-5-5-release kernel: audit: type=1325 audit(1681849045.607:6): table=filter family=2 entries=9 op=xt_replace pid=2822 comm="iptables"
+Apr 18 20:17:25 vg3x-0-5-5-release kernel: audit: type=1300 audit(1681849045.607:6): arch=40000028 syscall=294 per=800000 success=yes exit=0 a0=4 a1=0 a2=40 a3=4e6f38 items=0 ppid=873 pid=2822 auid=4294967295 uid=0 gid=0 euid=0 suid=0 fsuid=0 egid=0 sgid=0 fsgid=0 tty=(none) ses=4294967295 comm="iptables" exe="/usr/sbin/xtables-legacy-multi" key=(null)
+Apr 18 20:17:25 vg3x-0-5-5-release kernel: audit: type=1327 audit(1681849045.607:6): proctitle=69707461626C6573002D77002D740066696C746572002D5A
+Apr 18 20:17:25 vg3x-0-5-5-release audit: PROCTITLE proctitle=69707461626C6573002D77002D740066696C746572002D5A
+Apr 18 20:17:37 vg3x-0-5-5-release ktcelld[3390]: Ip address on wwan0 already in sync
+Apr 18 20:17:37 vg3x-0-5-5-release ktcelld[960]: Connected: /usr/bin/hl7588_connect.sh -i wwan0 -a 10.241.245.201 -d 8.8.8.8
+Apr 18 20:17:37 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:17:53 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:17:53 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:18:07 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateCompleteConnect:2163] Connection failed, wwan0 ip address is Intf:0.0.0.0, Nw:10.241.245.201
+Apr 18 20:18:12 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:18:12 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:18:12 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:18:13 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:18:13 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:18:24 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:18:24 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:18:52 vg3x-0-5-5-release ktcelld[6681]: Raising interface wwan0 10.161.197.164 8.8.8.8
+Apr 18 20:18:52 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:620] Iot internet status --> Down (wwan0)
+Apr 18 20:18:53 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:606] Ip change, possible network disconnection!
+Apr 18 20:18:53 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:18:53 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:613] Iot internet status --> Up (wwan0)
+Apr 18 20:18:53 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:18:53 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:18:53 vg3x-0-5-5-release systemd[1]: Started LBB System Monitoring Service.
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: Connected: /usr/bin/hl7588_connect.sh -i wwan0 -a 10.161.197.164 -d 8.8.8.8
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: INFO:: CellSrvNetlinkIntfCallback:850 | Ip Update for Intf wwan0 -> 10.161.197.164
+Apr 18 20:18:53 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateCompleteConnect:2141] Connection complete, wwan0 ip address -> 10.161.197.164
+Apr 18 20:18:54 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:18:54 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:18:55 vg3x-0-5-5-release systemd[1]: lbb-sys-info.service: Deactivated successfully.
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:164] Successfully connected to [a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com] with thing [01254016] with sessionPresent [0]
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:397] Successfully connected to AWS Broker, broker session present: [0]
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:674] IoT connection established
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:678] Resetting Handlers
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [IOTJobsHandlerLogic_Reset:650] Resetting Jobs Handler
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_Reset:71] Resetting Shadow Handler
+Apr 18 20:19:14 vg3x-0-5-5-release ktiotd[552]: [IoTPubHandler_Reset:167] Reset pub handler
+Apr 18 20:19:19 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/packages/update/accepted
+Apr 18 20:19:19 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 683
+Apr 18 20:19:22 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/get/accepted
+Apr 18 20:19:22 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 13082
+Apr 18 20:19:25 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/packages/get/accepted
+Apr 18 20:19:25 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 1401
+Apr 18 20:19:28 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/hubble/get/accepted
+Apr 18 20:19:28 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 21805
+Apr 18 20:19:42 vg3x-0-5-5-release chronyd[208]: Selected source SOC0
+Apr 18 20:22:07 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:22:07 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: up
+Apr 18 20:22:08 vg3x-0-5-5-release lbb_connection_check.sh[15383]: 200 OK
+Apr 18 20:22:08 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 300 seconds
+Apr 18 20:24:53 vg3x-0-5-5-release ktetapd[503]: [PM_SetCanActiveSrc:728] PM CANSrc set to 2, Current Active Buses -> 0x602
+Apr 18 20:25:01 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:25:01 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:25:19 vg3x-0-5-5-release kteldd[502]: [LocationSender_Send:497] Skipping request because the request state is not INIT [1]
+Apr 18 20:25:22 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:25:22 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:25:28 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:25:36 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Process:296] Failure during process loop [10]
+Apr 18 20:25:36 vg3x-0-5-5-release ktiotd[552]: [IoTSvc_Update:557] Disconnecting MQTT Client due to connection lost
+Apr 18 20:25:38 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:361] Client is no longer connected
+Apr 18 20:25:38 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:25:48 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:25:48 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:25:58 vg3x-0-5-5-release ktrelayd[675]: [HandleConnectionEvent:467] Curl did not succeed --> (28)
+Apr 18 20:26:12 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:26:12 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 30941 (ktbusd) with signal SIGABRT.
+Apr 18 20:26:12 vg3x-0-5-5-release ktbusd[30941]: SIGABRT - kill application
+Apr 18 20:26:13 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:26:13 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:26:13 vg3x-0-5-5-release ktbusd[30941]: Network hardware released
+Apr 18 20:26:13 vg3x-0-5-5-release ktbusd[30941]: Protocols cleared
+Apr 18 20:26:13 vg3x-0-5-5-release ktbusd[30941]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:26:13 vg3x-0-5-5-release ktbusd[30941]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:26:13 vg3x-0-5-5-release ktbusd[30941]: ktbusd service exiting
+Apr 18 20:26:13 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:26:13 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1min 3.872s CPU time.
+Apr 18 20:26:16 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 6.
+Apr 18 20:26:16 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:26:16 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1min 3.872s CPU time.
+Apr 18 20:26:16 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:26:16 vg3x-0-5-5-release ktbusd[24945]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:26:16 vg3x-0-5-5-release ktbusd[24945]: Network hardware configured
+Apr 18 20:26:16 vg3x-0-5-5-release ktbusd[24945]: Protocols initialized
+Apr 18 20:26:16 vg3x-0-5-5-release ktbusd[24945]: Finished initialization of ktbusd
+Apr 18 20:26:16 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:26:16 vg3x-0-5-5-release ktbusd[24945]: Reading Vehicle Bus Data...
+Apr 18 20:26:17 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:26:17 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:26:17 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:26:26 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:26:28 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:26:43 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:26:43 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 24945 (ktbusd) with signal SIGABRT.
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: SIGABRT - kill application
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: ARB: Done waiting for mux.
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: Network hardware released
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: Protocols cleared
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:26:43 vg3x-0-5-5-release ktbusd[24945]: ktbusd service exiting
+Apr 18 20:26:43 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:26:47 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 7.
+Apr 18 20:26:47 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:26:47 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:26:47 vg3x-0-5-5-release ktbusd[25896]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:26:47 vg3x-0-5-5-release ktbusd[25896]: Network hardware configured
+Apr 18 20:26:47 vg3x-0-5-5-release ktbusd[25896]: Protocols initialized
+Apr 18 20:26:47 vg3x-0-5-5-release ktbusd[25896]: Finished initialization of ktbusd
+Apr 18 20:26:47 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:26:47 vg3x-0-5-5-release ktbusd[25896]: Reading Vehicle Bus Data...
+Apr 18 20:27:08 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:27:12 vg3x-0-5-5-release ktbusd[25896]: ARB: Done waiting for mux.
+Apr 18 20:27:12 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:12 vg3x-0-5-5-release ktbusd[25896]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:27:12 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:12 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:12 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:18 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:27:27 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:28 vg3x-0-5-5-release kernel: audit: type=1701 audit(1681849648.836:7): auid=4294967295 uid=0 gid=0 ses=4294967295 pid=507 comm="ktmfid" exe="/usr/bin/ktmfid" sig=6 res=1
+Apr 18 20:27:28 vg3x-0-5-5-release audit[507]: ANOM_ABEND auid=4294967295 uid=0 gid=0 ses=4294967295 pid=507 comm="ktmfid" exe="/usr/bin/ktmfid" sig=6 res=1
+Apr 18 20:27:28 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktmfid.service: Watchdog timeout (limit 5s)!
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktmfid.service: Killing process 507 (ktmfid) with signal SIGABRT.
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 25896 (ktbusd) with signal SIGABRT.
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktmfid.service: Main process exited, code=killed, status=6/ABRT
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktmfid.service: Failed with result 'watchdog'.
+Apr 18 20:27:28 vg3x-0-5-5-release systemd[1]: ktmfid.service: Consumed 1.765s CPU time.
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: SIGABRT - kill application
+Apr 18 20:27:29 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:27:29 vg3x-0-5-5-release kteldd[502]: Processing Engine Stop
+Apr 18 20:27:29 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:29 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: Network hardware released
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: Protocols cleared
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:27:29 vg3x-0-5-5-release ktbusd[25896]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:27:30 vg3x-0-5-5-release ktbusd[25896]: ktbusd service exiting
+Apr 18 20:27:30 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:27:30 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 10.494s CPU time.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 8.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 10.494s CPU time.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:27:33 vg3x-0-5-5-release ktbusd[27542]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:27:33 vg3x-0-5-5-release ktbusd[27542]: Network hardware configured
+Apr 18 20:27:33 vg3x-0-5-5-release ktbusd[27542]: Protocols initialized
+Apr 18 20:27:33 vg3x-0-5-5-release ktbusd[27542]: Finished initialization of ktbusd
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:27:33 vg3x-0-5-5-release ktbusd[27542]: Reading Vehicle Bus Data...
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: ktmfid.service: Scheduled restart job, restart counter is at 1.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Apple Coprocessor 2.0C Driver Service.
+Apr 18 20:27:33 vg3x-0-5-5-release systemd[1]: ktmfid.service: Consumed 1.765s CPU time.
+Apr 18 20:27:34 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Apple Coprocessor 2.0C Driver Service...
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: Valid APN337S3959 ID found on address [0x10]
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: MFi Coproc: Cert SN " 2222AA190611AA06AA3298AA297159"
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: MFi Coproc: Certificate read, size 908 bytes
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: [CoprocessorInit:400] MFi: Detected MFI version 2
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: Valid APN337S3959 ID found on address [0x10]
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: MFi Coproc: Cert SN " 2222AA190611AA06AA3298AA297159"
+Apr 18 20:27:34 vg3x-0-5-5-release ktmfid[27583]: MFi Coproc: Certificate read, size 908 bytes
+Apr 18 20:27:34 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Apple Coprocessor 2.0C Driver Service.
+Apr 18 20:27:38 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:27:38 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:27:52 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:27:52 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:27:52 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:27:52 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:27:53 vg3x-0-5-5-release chronyd[208]: Source 45.33.103.94 offline
+Apr 18 20:27:53 vg3x-0-5-5-release chronyd[208]: Source 23.95.169.235 offline
+Apr 18 20:27:53 vg3x-0-5-5-release chronyd[208]: Source 68.233.45.146 offline
+Apr 18 20:27:53 vg3x-0-5-5-release chronyd[208]: Source 23.131.64.12 offline
+Apr 18 20:27:53 vg3x-0-5-5-release lbb_connection_check.sh[27999]: 200 OK
+Apr 18 20:27:53 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:27:58 vg3x-0-5-5-release ktbusd[27542]: ARB: Done waiting for mux.
+Apr 18 20:27:58 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:58 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:58 vg3x-0-5-5-release ktbusd[27542]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:27:58 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:27:58 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:28:04 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:28:04 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:28:04 vg3x-0-5-5-release ktbusd[27542]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:28:04 vg3x-0-5-5-release ktbusd[27542]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:28:08 vg3x-0-5-5-release chronyd[208]: Can't synchronise: no selectable sources
+Apr 18 20:28:19 vg3x-0-5-5-release ktbusd[27542]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:28:19 vg3x-0-5-5-release ktbusd[27542]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:28:19 vg3x-0-5-5-release ktbusd[27542]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:28:19 vg3x-0-5-5-release ktbusd[27542]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:28:20 vg3x-0-5-5-release ktbusd[27542]: J1939 0: Requesting to claim address 90 @ 1609637
+Apr 18 20:28:20 vg3x-0-5-5-release ktbusd[27542]: J1939 1: Requesting to claim address 90 @ 1609639
+Apr 18 20:28:20 vg3x-0-5-5-release ktbusd[27542]: J1939 1: Requesting to claim address 95 @ 1609642
+Apr 18 20:28:20 vg3x-0-5-5-release ktbusd[27542]: J1939 0: Claimed address 90
+Apr 18 20:28:20 vg3x-0-5-5-release ktbusd[27542]: J1939 1: Claimed address 95
+Apr 18 20:28:23 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:28:29 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for TGAL
+Apr 18 20:28:42 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for VIN
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for AAPP
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for TPCT
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for BPRS
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for PSAT
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for TSMG
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for ASF
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for SFLV
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for DDTC
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for EFTV
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for RHRS
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for BSEL
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for AATP
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: No source for EOTP
+Apr 18 20:28:42 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ESPD,J190,S0,C2017,F5,TC2017,FTI1582.034,TSL0.107,4578.125000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: LFRT,J190,S0,C404,F5,TC404,FTI1582.034,TSL0.107,161.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: EPCT,J190,S0,C805,F5,TC805,FTI1582.034,TSL0.111,71.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: APCT,J190,S0,C805,F5,TC805,FTI1582.034,TSL0.111,56.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: LODO,J190,S0,C404,F5,TC404,FTI1582.034,TSL0.111,2850.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ESPD,J191,S0,C2016,F0,TC2016,FTI1582.035,TSL0.107,4578.125000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: LFRT,J191,S0,C404,F0,TC404,FTI1582.035,TSL0.107,161.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: CCAC,J190,S0,C404,F0,TC404,FTI1582.036,TSL0.107,2
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: RSPD,J190,S0,C404,F5,TC404,FTI1582.036,TSL0.107,143.066406
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: PBRK,J190,S0,C404,F0,TC404,FTI1582.036,TSL0.107,1
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: EPCT,J191,S0,C806,F0,TC806,FTI1582.037,TSL0.111,71.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: APCT,J191,S0,C806,F0,TC806,FTI1582.037,TSL0.111,56.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: LODO,J191,S0,C404,F0,TC404,FTI1582.037,TSL0.111,2850.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: CCAC,J191,S0,C404,F0,TC404,FTI1582.037,TSL0.107,2
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: RSPD,J191,S0,C404,F0,TC404,FTI1582.037,TSL0.107,143.066406
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: PBRK,J191,S0,C404,F0,TC404,FTI1582.037,TSL0.107,1
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: OPRS,J190,S0,C81,F5,TC81,FTI1582.037,TSL10.312,568.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: OPRS,J191,S0,C81,F0,TC81,FTI1582.037,TSL10.312,568.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ITMP,J190,S0,C81,F5,TC81,FTI1582.038,TSL10.311,74.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ITMP,J191,S0,C81,F0,TC81,FTI1582.038,TSL10.311,74.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: CTMP,J190,S0,C40,F5,TC40,FTI1582.378,TSL10.811,102.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: CTMP,J191,S0,C40,F0,TC40,FTI1582.378,TSL10.811,102.000000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: BATV,J190,S0,C40,F5,TC40,FTI1582.379,TSL10.809,21.350000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: PFLV,J190,S0,C40,F5,TC40,FTI1582.379,TSL10.809,56.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: BATV,J191,S0,C40,F0,TC40,FTI1582.379,TSL10.809,21.350000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: PFLV,J191,S0,C40,F0,TC40,FTI1582.379,TSL10.809,56.800000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: EHRS,J190,S0,C3,F5,TC3,FTI1586.774,TSL15.366,712.500000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: EHRS,J191,S0,C3,F0,TC3,FTI1586.774,TSL15.365,712.500000
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: VIN,J190,S0,C18,F4,TC18,FTI1609.907,TSL11.830,1M8GDM9AXKP042057
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: VIN,J191,S0,C18,F0,TC18,FTI1609.907,TSL11.830,1M8GDM9AXKP042057
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:28:42 vg3x-0-5-5-release ktbusd[27542]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:28:43 vg3x-0-5-5-release kteldd[502]: Processing Engine Start
+Apr 18 20:28:43 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:28:52 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:29:02 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:29:18 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:18 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:18 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:29:17 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:29:17 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 27542 (ktbusd) with signal SIGABRT.
+Apr 18 20:29:17 vg3x-0-5-5-release ktbusd[27542]: SIGABRT - kill application
+Apr 18 20:29:18 vg3x-0-5-5-release ktbusd[27542]: Network hardware released
+Apr 18 20:29:18 vg3x-0-5-5-release ktbusd[27542]: Protocols cleared
+Apr 18 20:29:18 vg3x-0-5-5-release ktbusd[27542]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:29:18 vg3x-0-5-5-release ktbusd[27542]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:29:18 vg3x-0-5-5-release ktbusd[27542]: ktbusd service exiting
+Apr 18 20:29:18 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:29:18 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 4.878s CPU time.
+Apr 18 20:29:18 vg3x-0-5-5-release lbb_connection_check.sh[30888]: 200 OK
+Apr 18 20:29:18 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:29:21 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:29:21 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 9.
+Apr 18 20:29:21 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:29:21 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 4.878s CPU time.
+Apr 18 20:29:21 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:29:21 vg3x-0-5-5-release ktbusd[31046]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:29:21 vg3x-0-5-5-release ktbusd[31046]: Network hardware configured
+Apr 18 20:29:21 vg3x-0-5-5-release ktbusd[31046]: Protocols initialized
+Apr 18 20:29:21 vg3x-0-5-5-release ktbusd[31046]: Finished initialization of ktbusd
+Apr 18 20:29:21 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:29:21 vg3x-0-5-5-release ktbusd[31046]: Reading Vehicle Bus Data...
+Apr 18 20:29:22 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:29:22 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:29:22 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:29:29 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:29:46 vg3x-0-5-5-release ktbusd[31046]: ARB: Done waiting for mux.
+Apr 18 20:29:46 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:46 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:46 vg3x-0-5-5-release ktbusd[31046]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:29:46 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:46 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:48 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:29:52 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:52 vg3x-0-5-5-release ktbusd[31046]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:29:52 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:29:52 vg3x-0-5-5-release ktbusd[31046]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:29:58 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: J1939 0: Requesting to claim address 90 @ 1717764
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: J1939 1: Requesting to claim address 90 @ 1717764
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: J1939 1: Requesting to claim address 95 @ 1717778
+Apr 18 20:30:08 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: J1939 0: Claimed address 90
+Apr 18 20:30:08 vg3x-0-5-5-release ktbusd[31046]: J1939 1: Claimed address 95
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:30:27 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for TGAL
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for VIN
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for AAPP
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for TPCT
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for BPRS
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for PSAT
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for TSMG
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for ASF
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for SFLV
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for DDTC
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for EFTV
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for RHRS
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for BSEL
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for AATP
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: No source for EOTP
+Apr 18 20:30:27 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ESPD,J190,S0,C1769,F5,TC1769,FTI1681.851,TSL0.115,4578.125000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ESPD,J191,S0,C1770,F0,TC1770,FTI1681.851,TSL0.115,4578.125000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: LFRT,J190,S0,C354,F5,TC354,FTI1681.871,TSL0.115,161.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: EPCT,J190,S0,C709,F5,TC709,FTI1681.871,TSL0.115,71.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: APCT,J190,S0,C709,F5,TC709,FTI1681.871,TSL0.115,56.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: LODO,J190,S0,C356,F5,TC356,FTI1681.871,TSL0.115,2850.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: LFRT,J191,S0,C354,F0,TC354,FTI1681.871,TSL0.115,161.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: EPCT,J191,S0,C710,F0,TC710,FTI1681.871,TSL0.115,71.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: APCT,J191,S0,C710,F0,TC710,FTI1681.871,TSL0.115,56.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: LODO,J191,S0,C356,F0,TC356,FTI1681.871,TSL0.115,2850.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: CCAC,J191,S0,C356,F0,TC356,FTI1681.871,TSL0.115,2
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: RSPD,J191,S0,C356,F5,TC356,FTI1681.871,TSL0.115,143.066406
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: PBRK,J191,S0,C356,F0,TC356,FTI1681.871,TSL0.115,1
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: CCAC,J190,S0,C356,F0,TC356,FTI1681.872,TSL0.115,2
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: RSPD,J190,S0,C356,F0,TC356,FTI1681.872,TSL0.115,143.066406
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: PBRK,J190,S0,C356,F0,TC356,FTI1681.872,TSL0.115,1
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: CTMP,J190,S0,C37,F5,TC37,FTI1682.271,TSL10.889,102.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: CTMP,J191,S0,C37,F0,TC37,FTI1682.272,TSL10.889,102.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ITMP,J190,S0,C72,F5,TC72,FTI1682.273,TSL10.388,74.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: BATV,J190,S0,C36,F5,TC36,FTI1682.273,TSL10.888,21.350000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: PFLV,J190,S0,C36,F5,TC36,FTI1682.273,TSL10.888,56.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ITMP,J191,S0,C72,F0,TC72,FTI1682.273,TSL10.388,74.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: BATV,J191,S0,C36,F0,TC36,FTI1682.273,TSL10.888,21.350000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: PFLV,J191,S0,C36,F0,TC36,FTI1682.273,TSL10.888,56.800000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: OPRS,J190,S0,C72,F5,TC72,FTI1682.273,TSL10.390,568.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: OPRS,J191,S0,C72,F0,TC72,FTI1682.273,TSL10.390,568.000000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: EHRS,J190,S0,C2,F5,TC2,FTI1706.826,TSL15.280,712.500000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: EHRS,J191,S0,C2,F0,TC2,FTI1706.826,TSL15.280,712.500000
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: VIN,J190,S0,C14,F4,TC14,FTI1718.042,TSL10.730,1M8GDM9AXKP042057
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: VIN,J191,S0,C14,F0,TC14,FTI1718.042,TSL10.730,1M8GDM9AXKP042057
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:30:27 vg3x-0-5-5-release ktbusd[31046]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:30:28 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:30:37 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:30:38 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:30:38 vg3x-0-5-5-release lbb_connection_check.sh[1205]: 200 OK
+Apr 18 20:30:38 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:30:52 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:30:52 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:30:52 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:30:52 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:30:52 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 31046 (ktbusd) with signal SIGABRT.
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: SIGABRT - kill application
+Apr 18 20:30:53 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:30:53 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: Network hardware released
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: Protocols cleared
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:30:53 vg3x-0-5-5-release ktbusd[31046]: ktbusd service exiting
+Apr 18 20:30:53 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:30:53 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 12.494s CPU time.
+Apr 18 20:30:54 vg3x-0-5-5-release kteldd[502]: Processing Engine Stop
+Apr 18 20:30:56 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:30:56 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 10.
+Apr 18 20:30:56 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:30:56 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 12.494s CPU time.
+Apr 18 20:30:56 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:30:56 vg3x-0-5-5-release ktbusd[1535]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:30:56 vg3x-0-5-5-release ktbusd[1535]: Network hardware configured
+Apr 18 20:30:56 vg3x-0-5-5-release ktbusd[1535]: Protocols initialized
+Apr 18 20:30:56 vg3x-0-5-5-release ktbusd[1535]: Finished initialization of ktbusd
+Apr 18 20:30:56 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:30:56 vg3x-0-5-5-release ktbusd[1535]: Reading Vehicle Bus Data...
+Apr 18 20:31:08 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:31:18 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:31:21 vg3x-0-5-5-release ktbusd[1535]: ARB: Done waiting for mux.
+Apr 18 20:31:31 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:31:31 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:31:31 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 1535 (ktbusd) with signal SIGABRT.
+Apr 18 20:31:31 vg3x-0-5-5-release ktbusd[1535]: SIGABRT - kill application
+Apr 18 20:31:31 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:31:31 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:31:31 vg3x-0-5-5-release ktbusd[1535]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:31:32 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:31:32 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:31:32 vg3x-0-5-5-release ktbusd[1535]: Network hardware released
+Apr 18 20:31:32 vg3x-0-5-5-release ktbusd[1535]: Protocols cleared
+Apr 18 20:31:32 vg3x-0-5-5-release ktbusd[1535]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:31:32 vg3x-0-5-5-release ktbusd[1535]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:31:32 vg3x-0-5-5-release ktbusd[1535]: ktbusd service exiting
+Apr 18 20:31:32 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:31:32 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.249s CPU time.
+Apr 18 20:31:35 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 11.
+Apr 18 20:31:35 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:31:35 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.249s CPU time.
+Apr 18 20:31:35 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:31:35 vg3x-0-5-5-release ktbusd[2854]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:31:36 vg3x-0-5-5-release ktbusd[2854]: Network hardware configured
+Apr 18 20:31:36 vg3x-0-5-5-release ktbusd[2854]: Protocols initialized
+Apr 18 20:31:36 vg3x-0-5-5-release ktbusd[2854]: Finished initialization of ktbusd
+Apr 18 20:31:36 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:31:36 vg3x-0-5-5-release ktbusd[2854]: Reading Vehicle Bus Data...
+Apr 18 20:31:41 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:31:42 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:32:01 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:32:01 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:32:01 vg3x-0-5-5-release ktbusd[2854]: ARB: Done waiting for mux.
+Apr 18 20:32:01 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 2854 (ktbusd) with signal SIGABRT.
+Apr 18 20:32:01 vg3x-0-5-5-release ktbusd[2854]: SIGABRT - kill application
+Apr 18 20:32:01 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:02 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:32:02 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:02 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: Network hardware released
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: Protocols cleared
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:32:02 vg3x-0-5-5-release ktbusd[2854]: ktbusd service exiting
+Apr 18 20:32:02 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:32:02 vg3x-0-5-5-release lbb_connection_check.sh[3646]: 200 OK
+Apr 18 20:32:02 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:32:05 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 12.
+Apr 18 20:32:05 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:32:05 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:32:05 vg3x-0-5-5-release ktbusd[3756]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:32:05 vg3x-0-5-5-release ktbusd[3756]: Network hardware configured
+Apr 18 20:32:05 vg3x-0-5-5-release ktbusd[3756]: Protocols initialized
+Apr 18 20:32:05 vg3x-0-5-5-release ktbusd[3756]: Finished initialization of ktbusd
+Apr 18 20:32:05 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:32:05 vg3x-0-5-5-release ktbusd[3756]: Reading Vehicle Bus Data...
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: 
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Transport_OpenSSL_Sockets] [openssl_posix.c:666] Failed to establish a TLS connection.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:32:27 vg3x-0-5-5-release ktiotd[552]: [ERROR] [Sockets] [sockets_posix.c:135] Failed to resolve DNS: Hostname=a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com, ErrorCode=-3.
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:371] Connection attempts exhausted in retry state, moving to disconnected state
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:32:26 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:32:30 vg3x-0-5-5-release ktbusd[3756]: ARB: Done waiting for mux.
+Apr 18 20:32:30 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:30 vg3x-0-5-5-release ktbusd[3756]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:32:30 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:30 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:30 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:32 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:32:37 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:37 vg3x-0-5-5-release ktbusd[3756]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:32:37 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:32:37 vg3x-0-5-5-release ktbusd[3756]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:32:42 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:32:42 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:33:01 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:33:01 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 3756 (ktbusd) with signal SIGABRT.
+Apr 18 20:33:01 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: SIGABRT - kill application
+Apr 18 20:33:01 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: Network hardware released
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: Protocols cleared
+Apr 18 20:33:01 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:33:01 vg3x-0-5-5-release ktbusd[3756]: ktbusd service exiting
+Apr 18 20:33:02 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:33:02 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.410s CPU time.
+Apr 18 20:33:05 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 13.
+Apr 18 20:33:05 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:33:05 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.410s CPU time.
+Apr 18 20:33:05 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:33:05 vg3x-0-5-5-release ktbusd[5701]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:33:05 vg3x-0-5-5-release ktbusd[5701]: Network hardware configured
+Apr 18 20:33:05 vg3x-0-5-5-release ktbusd[5701]: Protocols initialized
+Apr 18 20:33:05 vg3x-0-5-5-release ktbusd[5701]: Finished initialization of ktbusd
+Apr 18 20:33:05 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:33:05 vg3x-0-5-5-release ktbusd[5701]: Reading Vehicle Bus Data...
+Apr 18 20:33:11 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:33:21 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:33:22 vg3x-0-5-5-release lbb_connection_check.sh[6630]: 200 OK
+Apr 18 20:33:22 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:33:37 vg3x-0-5-5-release ktbusd[5701]: ARB: Done waiting for mux.
+Apr 18 20:33:37 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:37 vg3x-0-5-5-release ktbusd[5701]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:33:37 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:38 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:38 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:44 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:44 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:33:44 vg3x-0-5-5-release ktbusd[5701]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:33:44 vg3x-0-5-5-release ktbusd[5701]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:33:48 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateChkNetStatus:2361] UE detached from the network
+Apr 18 20:33:52 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:33:52 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:33:52 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:33:52 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:34:07 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:34:07 vg3x-0-5-5-release ktbusd[5701]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:34:07 vg3x-0-5-5-release ktbusd[5701]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:34:07 vg3x-0-5-5-release ktbusd[5701]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:34:07 vg3x-0-5-5-release ktbusd[5701]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:34:08 vg3x-0-5-5-release ktbusd[5701]: J1939 0: Requesting to claim address 90 @ 1957645
+Apr 18 20:34:08 vg3x-0-5-5-release ktbusd[5701]: J1939 1: Requesting to claim address 90 @ 1957647
+Apr 18 20:34:08 vg3x-0-5-5-release ktbusd[5701]: J1939 1: Requesting to claim address 95 @ 1957647
+Apr 18 20:34:08 vg3x-0-5-5-release ktbusd[5701]: J1939 0: Claimed address 90
+Apr 18 20:34:08 vg3x-0-5-5-release ktbusd[5701]: J1939 1: Claimed address 95
+Apr 18 20:34:17 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for TGAL
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for VIN
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for AAPP
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for TPCT
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for BPRS
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for PSAT
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for TSMG
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for ASF
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for SFLV
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for DDTC
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for EFTV
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for RHRS
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for BSEL
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for AATP
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: No source for EOTP
+Apr 18 20:34:20 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ITMP,J190,S0,C92,F5,TC92,FTI1894.696,TSL0.151,74.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: LFRT,J190,S0,C454,F5,TC454,FTI1894.696,TSL0.053,161.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ESPD,J190,S0,C2260,F5,TC2260,FTI1894.696,TSL0.013,4578.125000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ESPD,J191,S0,C2259,F0,TC2259,FTI1905.778,TSL0.013,4578.125000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: EPCT,J190,S0,C903,F5,TC903,FTI1905.788,TSL0.053,71.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: APCT,J190,S0,C903,F5,TC903,FTI1905.788,TSL0.053,56.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: EPCT,J191,S0,C904,F0,TC904,FTI1905.788,TSL0.053,71.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: APCT,J191,S0,C904,F0,TC904,FTI1905.788,TSL0.053,56.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: LODO,J190,S0,C453,F5,TC453,FTI1905.838,TSL0.053,2850.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: CCAC,J190,S0,C452,F0,TC452,FTI1905.838,TSL0.052,2
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: RSPD,J190,S0,C452,F5,TC452,FTI1905.838,TSL0.052,143.066406
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: PBRK,J190,S0,C452,F0,TC452,FTI1905.838,TSL0.052,1
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: LFRT,J191,S0,C453,F0,TC453,FTI1905.838,TSL0.053,161.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: LODO,J191,S0,C453,F0,TC453,FTI1905.838,TSL0.053,2850.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: CCAC,J191,S0,C452,F0,TC452,FTI1905.838,TSL0.052,2
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: RSPD,J191,S0,C452,F0,TC452,FTI1905.838,TSL0.052,143.066406
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: PBRK,J191,S0,C452,F0,TC452,FTI1905.838,TSL0.052,1
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: OPRS,J190,S0,C91,F5,TC91,FTI1906.038,TSL0.152,568.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: CTMP,J190,S0,C47,F5,TC47,FTI1906.038,TSL0.152,102.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: OPRS,J191,S0,C91,F0,TC91,FTI1906.038,TSL0.151,568.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: CTMP,J191,S0,C47,F0,TC47,FTI1906.038,TSL0.151,102.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: BATV,J190,S0,C47,F5,TC47,FTI1906.039,TSL0.151,21.350000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: PFLV,J190,S0,C47,F5,TC47,FTI1906.039,TSL0.151,56.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ITMP,J191,S0,C91,F0,TC91,FTI1906.039,TSL0.151,74.000000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: BATV,J191,S0,C47,F0,TC47,FTI1906.039,TSL0.151,21.350000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: PFLV,J191,S0,C47,F0,TC47,FTI1906.039,TSL0.151,56.800000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: EHRS,J190,S0,C4,F5,TC4,FTI1916.908,TSL8.203,712.500000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: EHRS,J191,S0,C4,F0,TC4,FTI1916.908,TSL8.203,712.500000
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: VIN,J190,S0,C18,F4,TC18,FTI1957.930,TSL1.831,1M8GDM9AXKP042057
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: VIN,J191,S0,C18,F0,TC18,FTI1957.930,TSL1.831,1M8GDM9AXKP042057
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:34:20 vg3x-0-5-5-release ktbusd[5701]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:34:21 vg3x-0-5-5-release kteldd[502]: Processing Engine Start
+Apr 18 20:34:21 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:34:27 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:34:42 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:34:43 vg3x-0-5-5-release lbb_connection_check.sh[9178]: 200 OK
+Apr 18 20:34:43 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:35:14 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:35:18 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:35:18 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:35:18 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:35:24 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:35:42 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:35:42 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:35:44 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:35:44 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:35:42 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 5701 (ktbusd) with signal SIGABRT.
+Apr 18 20:35:42 vg3x-0-5-5-release ktbusd[5701]: SIGABRT - kill application
+Apr 18 20:35:44 vg3x-0-5-5-release ktbusd[5701]: Network hardware released
+Apr 18 20:35:44 vg3x-0-5-5-release ktbusd[5701]: Protocols cleared
+Apr 18 20:35:44 vg3x-0-5-5-release ktbusd[5701]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:35:44 vg3x-0-5-5-release ktbusd[5701]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:35:44 vg3x-0-5-5-release ktbusd[5701]: ktbusd service exiting
+Apr 18 20:35:44 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:35:44 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 8.528s CPU time.
+Apr 18 20:35:47 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:35:47 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 14.
+Apr 18 20:35:47 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:35:47 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 8.528s CPU time.
+Apr 18 20:35:47 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:35:47 vg3x-0-5-5-release ktbusd[11209]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:35:47 vg3x-0-5-5-release ktbusd[11209]: Network hardware configured
+Apr 18 20:35:47 vg3x-0-5-5-release ktbusd[11209]: Protocols initialized
+Apr 18 20:35:47 vg3x-0-5-5-release ktbusd[11209]: Finished initialization of ktbusd
+Apr 18 20:35:47 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:35:47 vg3x-0-5-5-release ktbusd[11209]: Reading Vehicle Bus Data...
+Apr 18 20:35:52 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:36:02 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:36:03 vg3x-0-5-5-release lbb_connection_check.sh[12080]: 200 OK
+Apr 18 20:36:03 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:36:13 vg3x-0-5-5-release ktbusd[11209]: ARB: Done waiting for mux.
+Apr 18 20:36:13 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:13 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:13 vg3x-0-5-5-release ktbusd[11209]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:36:14 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:14 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:20 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:20 vg3x-0-5-5-release ktbusd[11209]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:36:20 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:20 vg3x-0-5-5-release ktbusd[11209]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:36:39 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:36:39 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 11209 (ktbusd) with signal SIGABRT.
+Apr 18 20:36:39 vg3x-0-5-5-release ktbusd[11209]: SIGABRT - kill application
+Apr 18 20:36:39 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:36:39 vg3x-0-5-5-release ktbusd[11209]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:36:39 vg3x-0-5-5-release ktbusd[11209]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:36:40 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:40 vg3x-0-5-5-release ktbusd[11209]: Network hardware released
+Apr 18 20:36:40 vg3x-0-5-5-release ktbusd[11209]: Protocols cleared
+Apr 18 20:36:40 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:36:40 vg3x-0-5-5-release ktbusd[11209]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:36:40 vg3x-0-5-5-release ktbusd[11209]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:36:40 vg3x-0-5-5-release ktbusd[11209]: ktbusd service exiting
+Apr 18 20:36:40 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:36:40 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.339s CPU time.
+Apr 18 20:36:43 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 15.
+Apr 18 20:36:43 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:36:43 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 1.339s CPU time.
+Apr 18 20:36:43 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:36:43 vg3x-0-5-5-release ktbusd[13114]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:36:43 vg3x-0-5-5-release ktbusd[13114]: Network hardware configured
+Apr 18 20:36:43 vg3x-0-5-5-release ktbusd[13114]: Protocols initialized
+Apr 18 20:36:43 vg3x-0-5-5-release ktbusd[13114]: Finished initialization of ktbusd
+Apr 18 20:36:43 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:36:43 vg3x-0-5-5-release ktbusd[13114]: Reading Vehicle Bus Data...
+Apr 18 20:36:44 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:36:44 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:36:44 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:36:49 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:37:08 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:37:08 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:08 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:08 vg3x-0-5-5-release ktbusd[13114]: ARB: Done waiting for mux.
+Apr 18 20:37:08 vg3x-0-5-5-release ktbusd[13114]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:37:09 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:09 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:15 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:15 vg3x-0-5-5-release ktbusd[13114]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:37:15 vg3x-0-5-5-release ktbusd[13114]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:37:15 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:37:18 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:37:28 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:37:29 vg3x-0-5-5-release lbb_connection_check.sh[14847]: 200 OK
+Apr 18 20:37:29 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:37:39 vg3x-0-5-5-release ktbusd[13114]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:37:39 vg3x-0-5-5-release ktbusd[13114]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:37:39 vg3x-0-5-5-release ktbusd[13114]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:37:39 vg3x-0-5-5-release ktbusd[13114]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:37:40 vg3x-0-5-5-release ktbusd[13114]: J1939 0: Requesting to claim address 90 @ 2169664
+Apr 18 20:37:40 vg3x-0-5-5-release ktbusd[13114]: J1939 1: Requesting to claim address 90 @ 2169664
+Apr 18 20:37:40 vg3x-0-5-5-release ktbusd[13114]: J1939 1: Requesting to claim address 95 @ 2169665
+Apr 18 20:37:40 vg3x-0-5-5-release ktbusd[13114]: J1939 0: Claimed address 90
+Apr 18 20:37:40 vg3x-0-5-5-release ktbusd[13114]: J1939 1: Claimed address 95
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for TGAL
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for VIN
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for AAPP
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for TPCT
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for BPRS
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for PSAT
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for TSMG
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for ASF
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for SFLV
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for DDTC
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for EFTV
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for RHRS
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for BSEL
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for AATP
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: No source for EOTP
+Apr 18 20:37:52 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: LODO,J190,S0,C390,F5,TC390,FTI2112.959,TSL0.109,2850.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ITMP,J190,S0,C81,F5,TC81,FTI2112.959,TSL0.408,74.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: BATV,J190,S0,C39,F5,TC39,FTI2112.959,TSL0.408,21.350000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: PFLV,J190,S0,C39,F5,TC39,FTI2112.959,TSL0.408,56.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: LFRT,J191,S0,C391,F5,TC391,FTI2112.960,TSL0.010,161.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ESPD,J191,S0,C1945,F5,TC1945,FTI2112.960,TSL0.010,4578.125000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: EPCT,J191,S0,C781,F5,TC781,FTI2112.960,TSL0.010,71.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: APCT,J191,S0,C781,F5,TC781,FTI2112.960,TSL0.010,56.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: LFRT,J190,S0,C391,F0,TC391,FTI2112.962,TSL0.010,161.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ESPD,J190,S0,C1944,F0,TC1944,FTI2112.962,TSL0.010,4578.125000
+Apr 18 20:37:53 vg3x-0-5-5-release systemd-journald[99]: Data hash table of /run/log/journal/cd8ded477bf84257aefdc0cc8bce478f/system.journal has a fill level at 75.0 (1696 of 2261 items, 1302528 file size, 768 bytes per hash table item), suggesting rotation.
+Apr 18 20:37:53 vg3x-0-5-5-release systemd-journald[99]: /run/log/journal/cd8ded477bf84257aefdc0cc8bce478f/system.journal: Journal header limits reached or header out-of-date, rotating.
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: EPCT,J190,S0,C780,F0,TC780,FTI2112.962,TSL0.058,71.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: APCT,J190,S0,C780,F0,TC780,FTI2112.962,TSL0.058,56.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: CCAC,J190,S0,C389,F0,TC389,FTI2124.112,TSL0.109,2
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: RSPD,J190,S0,C389,F5,TC389,FTI2124.112,TSL0.109,143.066406
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: PBRK,J190,S0,C389,F0,TC389,FTI2124.112,TSL0.109,1
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: LODO,J191,S0,C389,F0,TC389,FTI2124.112,TSL0.109,2850.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: CCAC,J191,S0,C389,F0,TC389,FTI2124.112,TSL0.109,2
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: RSPD,J191,S0,C389,F0,TC389,FTI2124.112,TSL0.109,143.066406
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: PBRK,J191,S0,C389,F0,TC389,FTI2124.112,TSL0.109,1
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: OPRS,J190,S0,C80,F5,TC80,FTI2124.313,TSL0.408,568.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: OPRS,J191,S0,C80,F0,TC80,FTI2124.313,TSL0.410,568.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ITMP,J191,S0,C80,F0,TC80,FTI2124.314,TSL0.408,74.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: CTMP,J190,S0,C38,F5,TC38,FTI2124.811,TSL0.408,102.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: CTMP,J191,S0,C38,F0,TC38,FTI2124.812,TSL0.408,102.000000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: BATV,J191,S0,C38,F0,TC38,FTI2124.813,TSL0.408,21.350000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: PFLV,J191,S0,C38,F0,TC38,FTI2124.813,TSL0.408,56.800000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: EHRS,J190,S0,C4,F5,TC4,FTI2126.970,TSL10.177,712.500000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: EHRS,J191,S0,C4,F0,TC4,FTI2126.970,TSL10.176,712.500000
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: VIN,J190,S0,C18,F4,TC18,FTI2169.945,TSL1.829,1M8GDM9AXKP042057
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: VIN,J191,S0,C18,F0,TC18,FTI2169.945,TSL1.829,1M8GDM9AXKP042057
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:37:52 vg3x-0-5-5-release ktbusd[13114]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:37:53 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:37:59 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:38:14 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:38:14 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:38:14 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:38:14 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:38:14 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 13114 (ktbusd) with signal SIGABRT.
+Apr 18 20:38:14 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:38:14 vg3x-0-5-5-release ktbusd[13114]: SIGABRT - kill application
+Apr 18 20:38:15 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:15 vg3x-0-5-5-release ktbusd[13114]: Network hardware released
+Apr 18 20:38:15 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:15 vg3x-0-5-5-release ktbusd[13114]: Protocols cleared
+Apr 18 20:38:15 vg3x-0-5-5-release ktbusd[13114]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:38:15 vg3x-0-5-5-release ktbusd[13114]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:38:15 vg3x-0-5-5-release ktbusd[13114]: ktbusd service exiting
+Apr 18 20:38:15 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:38:15 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 3.328s CPU time.
+Apr 18 20:38:15 vg3x-0-5-5-release kteldd[502]: Processing Engine Stop
+Apr 18 20:38:17 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:38:18 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 16.
+Apr 18 20:38:18 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:38:18 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 3.328s CPU time.
+Apr 18 20:38:18 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:38:18 vg3x-0-5-5-release ktbusd[16266]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:38:18 vg3x-0-5-5-release ktbusd[16266]: Network hardware configured
+Apr 18 20:38:18 vg3x-0-5-5-release ktbusd[16266]: Protocols initialized
+Apr 18 20:38:19 vg3x-0-5-5-release ktbusd[16266]: Finished initialization of ktbusd
+Apr 18 20:38:19 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:38:19 vg3x-0-5-5-release ktbusd[16266]: Reading Vehicle Bus Data...
+Apr 18 20:38:24 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:38:44 vg3x-0-5-5-release ktbusd[16266]: ARB: Done waiting for mux.
+Apr 18 20:38:44 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:44 vg3x-0-5-5-release ktbusd[16266]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:38:44 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:45 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.0.0.1
+Apr 18 20:38:45 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:45 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:51 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:51 vg3x-0-5-5-release ktbusd[16266]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:38:51 vg3x-0-5-5-release ktbusd[16266]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:38:51 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:38:55 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: down
+Apr 18 20:38:55 vg3x-0-5-5-release lbb_connection_check.sh[17650]: 200 OK
+Apr 18 20:38:55 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 30 seconds
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: J1939 0: Requesting to claim address 90 @ 2256114
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: J1939 1: Requesting to claim address 90 @ 2256115
+Apr 18 20:39:06 vg3x-0-5-5-release ktbusd[16266]: J1939 1: Requesting to claim address 95 @ 2256121
+Apr 18 20:39:07 vg3x-0-5-5-release ktbusd[16266]: J1939 0: Claimed address 90
+Apr 18 20:39:07 vg3x-0-5-5-release ktbusd[16266]: J1939 1: Claimed address 95
+Apr 18 20:39:15 vg3x-0-5-5-release ktetapd[503]: [PM_SetCanActiveSrc:728] PM CANSrc set to 2, Current Active Buses -> 0x602
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for TGAL
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for VIN
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for AAPP
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for TPCT
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for BPRS
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for PSAT
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for TSMG
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for ASF
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for SFLV
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for DDTC
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for EFTV
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for RHRS
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for BSEL
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for AATP
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: No source for EOTP
+Apr 18 20:39:19 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ESPD,J190,S0,C1971,F5,TC1971,FTI2208.419,TSL0.018,4578.125000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: LFRT,J190,S0,C396,F5,TC396,FTI2208.419,TSL0.039,161.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: EPCT,J190,S0,C789,F5,TC789,FTI2208.419,TSL0.039,71.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: APCT,J190,S0,C789,F5,TC789,FTI2208.419,TSL0.039,56.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: LODO,J190,S0,C396,F5,TC396,FTI2208.419,TSL0.038,2850.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: CCAC,J190,S0,C396,F0,TC396,FTI2208.419,TSL0.038,2
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: RSPD,J190,S0,C396,F5,TC396,FTI2208.419,TSL0.038,143.066406
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: PBRK,J190,S0,C396,F0,TC396,FTI2208.419,TSL0.038,1
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ESPD,J191,S0,C1970,F0,TC1970,FTI2219.392,TSL0.018,4578.125000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: LFRT,J191,S0,C394,F0,TC394,FTI2219.413,TSL0.039,161.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: EPCT,J191,S0,C789,F0,TC789,FTI2219.413,TSL0.039,71.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: APCT,J191,S0,C789,F0,TC789,FTI2219.413,TSL0.039,56.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: LODO,J191,S0,C395,F0,TC395,FTI2219.413,TSL0.038,2850.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: CCAC,J191,S0,C395,F0,TC395,FTI2219.413,TSL0.038,2
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: RSPD,J191,S0,C395,F0,TC395,FTI2219.413,TSL0.038,143.066406
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: PBRK,J191,S0,C395,F0,TC395,FTI2219.413,TSL0.038,1
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: OPRS,J190,S0,C80,F5,TC80,FTI2219.711,TSL0.438,568.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: OPRS,J191,S0,C80,F0,TC80,FTI2219.711,TSL0.438,568.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: CTMP,J190,S0,C39,F5,TC39,FTI2219.712,TSL0.937,102.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: CTMP,J191,S0,C39,F0,TC39,FTI2219.712,TSL0.937,102.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ITMP,J191,S0,C80,F5,TC80,FTI2219.712,TSL0.436,74.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ITMP,J190,S0,C80,F0,TC80,FTI2219.713,TSL0.437,74.000000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: BATV,J190,S0,C39,F5,TC39,FTI2219.713,TSL0.935,21.350000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: PFLV,J190,S0,C39,F5,TC39,FTI2219.713,TSL0.935,56.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: BATV,J191,S0,C39,F0,TC39,FTI2219.713,TSL0.935,21.350000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: PFLV,J191,S0,C38,F0,TC38,FTI2219.713,TSL0.935,56.800000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: EHRS,J190,S0,C2,F5,TC2,FTI2247.004,TSL6.587,712.500000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: EHRS,J191,S0,C2,F0,TC2,FTI2247.005,TSL6.587,712.500000
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: VIN,J190,S0,C18,F4,TC18,FTI2256.396,TSL1.816,1M8GDM9AXKP042057
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: VIN,J191,S0,C18,F0,TC18,FTI2256.396,TSL1.816,1M8GDM9AXKP042057
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:39:19 vg3x-0-5-5-release ktbusd[16266]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:39:20 vg3x-0-5-5-release kteldd[502]: Processing Engine Start
+Apr 18 20:39:20 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:39:30 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.8.8
+Apr 18 20:39:30 vg3x-0-5-5-release systemd[1]: ktbusd.service: Watchdog timeout (limit 10s)!
+Apr 18 20:39:30 vg3x-0-5-5-release systemd[1]: ktbusd.service: Killing process 16266 (ktbusd) with signal SIGABRT.
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: SIGABRT - kill application
+Apr 18 20:39:31 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:39:31 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: Network hardware released
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: Protocols cleared
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: [CANLogger_Stop:120] On interface CAN0: Attempted to stop CAN logger with no log in progress
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: [CANLogger_Stop:120] On interface CAN1: Attempted to stop CAN logger with no log in progress
+Apr 18 20:39:31 vg3x-0-5-5-release ktbusd[16266]: ktbusd service exiting
+Apr 18 20:39:31 vg3x-0-5-5-release systemd[1]: ktbusd.service: Failed with result 'watchdog'.
+Apr 18 20:39:31 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 11.154s CPU time.
+Apr 18 20:39:31 vg3x-0-5-5-release kteldd[502]: Processing Engine Stop
+Apr 18 20:39:34 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Stopped
+Apr 18 20:39:34 vg3x-0-5-5-release systemd[1]: ktbusd.service: Scheduled restart job, restart counter is at 17.
+Apr 18 20:39:34 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Vehicle Bus Service.
+Apr 18 20:39:34 vg3x-0-5-5-release systemd[1]: ktbusd.service: Consumed 11.154s CPU time.
+Apr 18 20:39:34 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Vehicle Bus Service...
+Apr 18 20:39:34 vg3x-0-5-5-release ktbusd[19064]: systemd watch dog [keep-alive 3333ms]
+Apr 18 20:39:34 vg3x-0-5-5-release ktbusd[19064]: Network hardware configured
+Apr 18 20:39:34 vg3x-0-5-5-release ktbusd[19064]: Protocols initialized
+Apr 18 20:39:35 vg3x-0-5-5-release ktbusd[19064]: Finished initialization of ktbusd
+Apr 18 20:39:35 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Vehicle Bus Service.
+Apr 18 20:39:35 vg3x-0-5-5-release ktbusd[19064]: Reading Vehicle Bus Data...
+Apr 18 20:39:38 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:39:38 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:128] Failure connecting to AWS Broker [6]
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:414] Failure connecting to AWS Broker with client session: [1]
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [GetBackoffTime:656] All reconnect attempts exhausted, backing off for maximum amount [60000]
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:371] Connection attempts exhausted in retry state, moving to disconnected state
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:39:40 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:39:40 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 8.8.4.4
+Apr 18 20:39:51 vg3x-0-5-5-release systemd[1]: ktmfid.service: Watchdog timeout (limit 5s)!
+Apr 18 20:39:51 vg3x-0-5-5-release kernel: audit: type=1701 audit(1681850391.205:8): auid=4294967295 uid=0 gid=0 ses=4294967295 pid=27583 comm="ktmfid" exe="/usr/bin/ktmfid" sig=6 res=1
+Apr 18 20:39:51 vg3x-0-5-5-release audit[27583]: ANOM_ABEND auid=4294967295 uid=0 gid=0 ses=4294967295 pid=27583 comm="ktmfid" exe="/usr/bin/ktmfid" sig=6 res=1
+Apr 18 20:39:51 vg3x-0-5-5-release systemd[1]: ktmfid.service: Killing process 27583 (ktmfid) with signal SIGABRT.
+Apr 18 20:39:51 vg3x-0-5-5-release lbb_connection_check.sh[1063]: PINGING 1.1.1.1
+Apr 18 20:39:51 vg3x-0-5-5-release systemd[1]: ktmfid.service: Main process exited, code=killed, status=6/ABRT
+Apr 18 20:39:51 vg3x-0-5-5-release systemd[1]: ktmfid.service: Failed with result 'watchdog'.
+Apr 18 20:39:51 vg3x-0-5-5-release chronyd[208]: Selected source SOC0
+Apr 18 20:39:53 vg3x-0-5-5-release kteldd[502]: [LocationSender_Send:497] Skipping request because the request state is not INIT [1]
+Apr 18 20:39:55 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:39:55 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:39:56 vg3x-0-5-5-release systemd[1]: ktmfid.service: Scheduled restart job, restart counter is at 2.
+Apr 18 20:39:56 vg3x-0-5-5-release systemd[1]: Stopped KeepTruckin Apple Coprocessor 2.0C Driver Service.
+Apr 18 20:39:56 vg3x-0-5-5-release systemd[1]: Starting KeepTruckin Apple Coprocessor 2.0C Driver Service...
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: Valid APN337S3959 ID found on address [0x10]
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: MFi Coproc: Cert SN " 2222AA190611AA06AA3298AA297159"
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: MFi Coproc: Certificate read, size 908 bytes
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: [CoprocessorInit:400] MFi: Detected MFI version 2
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: Valid APN337S3959 ID found on address [0x10]
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: MFi Coproc: Cert SN " 2222AA190611AA06AA3298AA297159"
+Apr 18 20:39:56 vg3x-0-5-5-release ktmfid[19737]: MFi Coproc: Certificate read, size 908 bytes
+Apr 18 20:39:56 vg3x-0-5-5-release systemd[1]: Started KeepTruckin Apple Coprocessor 2.0C Driver Service.
+Apr 18 20:39:59 vg3x-0-5-5-release lbb_connection_check.sh[1063]: NETWORK STATE: up
+Apr 18 20:39:59 vg3x-0-5-5-release chronyd[208]: Source 45.33.103.94 online
+Apr 18 20:39:59 vg3x-0-5-5-release chronyd[208]: Source 23.95.169.235 online
+Apr 18 20:39:59 vg3x-0-5-5-release chronyd[208]: Source 68.233.45.146 online
+Apr 18 20:39:59 vg3x-0-5-5-release chronyd[208]: Source 23.131.64.12 online
+Apr 18 20:39:59 vg3x-0-5-5-release lbb_connection_check.sh[19889]: 200 OK
+Apr 18 20:39:59 vg3x-0-5-5-release lbb_connection_check.sh[1063]: Sleeping for 300 seconds
+Apr 18 20:40:00 vg3x-0-5-5-release ktbusd[19064]: ARB: Done waiting for mux.
+Apr 18 20:40:00 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:00 vg3x-0-5-5-release ktbusd[19064]: ARB: Searching for active buses actively Sw State: CAN1...
+Apr 18 20:40:00 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:00 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:00 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:04 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:40:06 vg3x-0-5-5-release kernel: c_can_platform 481cc000.can can0: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:06 vg3x-0-5-5-release ktbusd[19064]: ARB: Active network: CAN0 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:40:06 vg3x-0-5-5-release kernel: c_can_platform 481d0000.can can1: setting BTR=1c02 BRPE=0000
+Apr 18 20:40:06 vg3x-0-5-5-release ktbusd[19064]: ARB: Active network: CAN1 @ 500000 - J1939:1 OBDII:0 LO:0
+Apr 18 20:40:21 vg3x-0-5-5-release ktbusd[19064]: ARB: Requesting message: TGAL J190 Sff
+Apr 18 20:40:21 vg3x-0-5-5-release ktbusd[19064]: ARB: Requesting message: TGAL J191 Sff
+Apr 18 20:40:21 vg3x-0-5-5-release ktbusd[19064]: ARB: Started J1939 address claim on CAN0
+Apr 18 20:40:21 vg3x-0-5-5-release ktbusd[19064]: ARB: Started J1939 address claim on CAN1
+Apr 18 20:40:22 vg3x-0-5-5-release ktbusd[19064]: J1939 0: Requesting to claim address 90 @ 2331427
+Apr 18 20:40:22 vg3x-0-5-5-release ktbusd[19064]: J1939 1: Requesting to claim address 90 @ 2331429
+Apr 18 20:40:22 vg3x-0-5-5-release ktbusd[19064]: J1939 1: Requesting to claim address 95 @ 2331431
+Apr 18 20:40:22 vg3x-0-5-5-release ktbusd[19064]: J1939 0: Claimed address 90
+Apr 18 20:40:22 vg3x-0-5-5-release ktbusd[19064]: J1939 1: Claimed address 95
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Finished requesting, History has 30 entries
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for TGAL
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for VIN
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for AAPP
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for TPCT
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for BPRS
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for PSAT
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for TSMG
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for ASF
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for SFLV
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for DDTC
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for EFTV
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for RHRS
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for BSEL
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for AATP
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: No source for EOTP
+Apr 18 20:40:34 vg3x-0-5-5-release ktrebootd[485]: Read Error
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: LFRT,J190,S0,C438,F5,TC438,FTI2284.409,TSL0.016,113.550000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ESPD,J190,S0,C2186,F5,TC2186,FTI2284.409,TSL0.016,3212.750000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: EPCT,J190,S0,C873,F5,TC873,FTI2284.409,TSL0.011,50.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: APCT,J190,S0,C873,F5,TC873,FTI2284.409,TSL0.011,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: EPCT,J191,S0,C874,F0,TC874,FTI2300.355,TSL0.011,50.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: APCT,J191,S0,C874,F0,TC874,FTI2300.355,TSL0.011,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ESPD,J191,S0,C2181,F0,TC2181,FTI2300.355,TSL0.016,3212.750000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: LODO,J190,S0,C437,F5,TC437,FTI2300.357,TSL0.011,2000.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: CCAC,J190,S0,C437,F0,TC437,FTI2300.357,TSL0.011,2
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: RSPD,J190,S0,C437,F5,TC437,FTI2300.357,TSL0.011,100.398438
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: PBRK,J190,S0,C437,F0,TC437,FTI2300.357,TSL0.011,1
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: LFRT,J191,S0,C437,F0,TC437,FTI2300.357,TSL0.016,113.550000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: LODO,J191,S0,C437,F0,TC437,FTI2300.357,TSL0.011,2000.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: CCAC,J191,S0,C437,F0,TC437,FTI2300.357,TSL0.011,2
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: RSPD,J191,S0,C437,F0,TC437,FTI2300.357,TSL0.011,100.398438
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: PBRK,J191,S0,C437,F0,TC437,FTI2300.357,TSL0.011,1
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: PFLV,J190,S0,C45,F5,TC45,FTI2300.357,TSL0.314,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: CTMP,J190,S0,C46,F5,TC46,FTI2300.358,TSL0.316,60.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: PFLV,J191,S0,C45,F0,TC45,FTI2300.358,TSL0.315,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: CTMP,J191,S0,C46,F0,TC46,FTI2300.358,TSL0.316,60.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ITMP,J190,S0,C89,F5,TC89,FTI2300.359,TSL0.315,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: BATV,J190,S0,C45,F5,TC45,FTI2300.359,TSL0.315,15.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: OPRS,J190,S0,C89,F5,TC89,FTI2300.359,TSL0.316,400.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ITMP,J191,S0,C89,F0,TC89,FTI2300.359,TSL0.315,40.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: BATV,J191,S0,C45,F0,TC45,FTI2300.359,TSL0.315,15.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: OPRS,J191,S0,C89,F0,TC89,FTI2300.445,TSL0.316,400.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: EHRS,J190,S0,C3,F5,TC3,FTI2307.025,TSL6.868,500.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: EHRS,J191,S0,C3,F0,TC3,FTI2307.025,TSL6.868,500.000000
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: VIN,J190,S0,C18,F4,TC18,FTI2331.704,TSL1.814,1M8GDM9AXKP042040
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: VIN,J191,S0,C18,F0,TC18,FTI2331.704,TSL1.814,1M8GDM9AXKP042040
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 00 FFE00000 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 8F 8000820054DAF405 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 91 8000820054DDF41E 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 8E 8000820054CE6205 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 92 8000820154CE6205 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 93 8000820154DDF41E 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 94 8000820154DAF405 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 90 8000820154CE65BA 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J190 95 8000820154CE65BA 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 00 FFE00000 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 8F 8000820054DAF405 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 91 8000820054DDF41E 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 8E 8000820054CE6205 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 92 8000820154CE6205 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 93 8000820154DDF41E 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 94 8000820154DAF405 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Discovered Node J191 90 8000820054CE65BA 0
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: [SHMDb_GetVehicleState:1606] Found cached vehicle state for VIN [unknown]
+Apr 18 20:40:34 vg3x-0-5-5-release ktbusd[19064]: ARB: Decisions made. Moving to reading phase
+Apr 18 20:40:34 vg3x-0-5-5-release kteldd[502]: Processing Engine Start
+Apr 18 20:40:35 vg3x-0-5-5-release kteldd[502]: Processing Vehicle Moving
+Apr 18 20:40:36 vg3x-0-5-5-release ktcelld[21621]: Raising interface wwan0 10.180.68.218 8.8.8.8
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:620] Iot internet status --> Down (wwan0)
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:606] Ip change, possible network disconnection!
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:666] IoT connection was disconnected
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [IoTConNL_DataRdyCB:613] Iot internet status --> Up (wwan0)
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:430] Conditions for reconnect found while in disconnect state
+Apr 18 20:40:37 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:690] Attempting IoT reconnection
+Apr 18 20:40:37 vg3x-0-5-5-release systemd[1]: Started LBB System Monitoring Service.
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: Connected: /usr/bin/hl7588_connect.sh -i wwan0 -a 10.180.68.218 -d 8.8.8.8
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: wwan0 --> Up
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: INFO:: CellSrvNetlinkIntfCallback:850 | Ip Update for Intf wwan0 -> 10.180.68.218
+Apr 18 20:40:37 vg3x-0-5-5-release ktcelld[960]: [CellSrvStateCompleteConnect:2141] Connection complete, wwan0 ip address -> 10.180.68.218
+Apr 18 20:40:38 vg3x-0-5-5-release ktuploadd[511]: Temporary Credential Fetching In Progress
+Apr 18 20:40:39 vg3x-0-5-5-release kteldd[502]: [HandleResp:249] RT location CURL request returned error [28]:
+Apr 18 20:40:39 vg3x-0-5-5-release kteldd[502]: [HandleResp:303] Unhandled RT location HTTP code 0
+Apr 18 20:40:39 vg3x-0-5-5-release ktuploadd[511]: Temporary Credential Fetching In Progress
+Apr 18 20:40:39 vg3x-0-5-5-release ktuploadd[511]: Temporary Credential Fetching In Progress
+Apr 18 20:40:39 vg3x-0-5-5-release systemd[1]: lbb-sys-info.service: Deactivated successfully.
+Apr 18 20:40:40 vg3x-0-5-5-release ktuploadd[511]: Temporary Credential Fetching In Progress
+Apr 18 20:40:40 vg3x-0-5-5-release ktuploadd[511]: Temporary Credential Fetching In Progress
+Apr 18 20:40:41 vg3x-0-5-5-release livestream.py[986]: INFO: Creating livestream credentials from temp credentials
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [MQTTIntf_Connect:164] Successfully connected to [a187cgt8m4f550-ats.iot.us-east-1.amazonaws.com] with thing [01254016] with sessionPresent [0]
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [IoTConHandler_Update:397] Successfully connected to AWS Broker, broker session present: [0]
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:674] IoT connection established
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [ConnectionStatusCb:678] Resetting Handlers
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [IOTJobsHandlerLogic_Reset:650] Resetting Jobs Handler
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_Reset:71] Resetting Shadow Handler
+Apr 18 20:40:42 vg3x-0-5-5-release ktiotd[552]: [IoTPubHandler_Reset:167] Reset pub handler
+Apr 18 20:40:47 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/packages/update/accepted
+Apr 18 20:40:47 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 683
+Apr 18 20:40:51 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/get/accepted
+Apr 18 20:40:51 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 13082
+Apr 18 20:40:53 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/packages/get/accepted
+Apr 18 20:40:53 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 1401
+Apr 18 20:40:56 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:176] Shadow data received data on topic: $aws/things/01254016/shadow/name/hubble/get/accepted
+Apr 18 20:40:57 vg3x-0-5-5-release ktiotd[552]: [IoTShadowHandler_HandleMsg:177] Shadow data length: 21805
